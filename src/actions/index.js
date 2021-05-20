@@ -1,12 +1,5 @@
-// export const CREATETASK = 'createTask';
-export const ADDTASK = 'addTask'; //変えてはいけない値のスペルミスを防ぐために、このように定数にしている
+export const ADDTASK = 'addTask';
 export const DELETETASK = 'deleteTask';
-
-// export const createTask = () => {
-//   return {
-//     type: CREATETASK
-//   }
-// }
 
 export const addTask = (title) => {
   return {
