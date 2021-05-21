@@ -12,6 +12,7 @@ class App extends Component {
     const kansu = (e) => {
       console.log(e.target.previousElementSibling.value);
       props.addTask(e.target.previousElementSibling.value);
+      e.target.previousElementSibling.value = '';
     }
     return (
       <React.Fragment>
