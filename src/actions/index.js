@@ -1,6 +1,9 @@
 export const ADDTASK = 'addTask';
 export const DELETETASK = 'deleteTask';
 
+export const ADDURL = 'addURL';
+export const DELETEURL = 'deleteURL';
+
 export const addTask = (title) => {
   return {
     type: ADDTASK,
@@ -17,5 +20,13 @@ export const deleteTask = (index) => {
       index: index
     }
   }
+}
 
+export const addURL = (url) => {
+  return {
+    type: ADDURL,
+    payload: {
+      url: url
+    }
+  }
 }
