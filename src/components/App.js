@@ -9,6 +9,9 @@ import {
   Link
 } from 'react-router-dom';
 
+import { Navi } from './navi.js';
+import { TaskForm } from './task_form.js';
+
 
 // class App extends Component {
 //   render() {
@@ -24,17 +27,27 @@ const App = (hoge) => {
     e.target.previousElementSibling.value = '';
   }
   return (
-    <React.Fragment>
-      <h1>todoリスト</h1>
-      <input />
-      <button onClick={kansu}>追加</button>
-      <ul>
-        {props.todos.map((todo, index) => (
-          <li key={index}>{todo.title} <button onClick={() => props.deleteTask(index)}>削除</button></li>
-        ))}
-      </ul>
-      <Child addURL={props.addURL} urls={props.urls} />
-    </React.Fragment>
+    <Router>
+      <div>
+        <Navi />
+        <Switch>
+          <Route path="/task_form">
+            <TaskForm addTask={props.addTask} />
+          </Route>
+          <Route path="/">
+            <h1>todoリスト</h1>
+            <input />
+            <button onClick={kansu}>追加</button>
+            <ul>
+              {props.todos.map((todo, index) => (
+                <li key={index}>{todo.title} <button onClick={() => props.deleteTask(index)}>削除</button></li>
+              ))}
+            </ul>
+            <Child addURL={props.addURL} urls={props.urls} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
   // }
 }
