@@ -1,14 +1,15 @@
 export const ADDTASK = 'addTask';
 export const DELETETASK = 'deleteTask';
 
-export const ADDURL = 'addURL';
-export const DELETEURL = 'deleteURL';
-
-export const addTask = (title) => {
+export const addTask = (ob) => {
   return {
     type: ADDTASK,
     payload: {
-      title: title
+      title: ob.title,
+      human: ob.human,
+      detail: ob.detail,
+      deadline: ob.deadline,
+      start: ob.start,
     }
   }
 }
@@ -18,15 +19,6 @@ export const deleteTask = (index) => {
     type: DELETETASK,
     payload: {
       index: index
-    }
-  }
-}
-
-export const addURL = (url) => {
-  return {
-    type: ADDURL,
-    payload: {
-      url: url
     }
   }
 }
