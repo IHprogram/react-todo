@@ -4,8 +4,6 @@ import {
 } from 'react-router-dom';
 
 export const TaskForm = props => {
-  console.log('TaskFormです');
-  console.log(props);
   const history = useHistory();
   const handleLink = path => history.push(path);
   const add = (e) => {
@@ -15,8 +13,6 @@ export const TaskForm = props => {
     ob.detail = e.target.previousElementSibling.children[2].children[1].value;
     ob.deadline = e.target.previousElementSibling.children[3].children[1].value;
     ob.start = e.target.previousElementSibling.children[4].children[1].value;
-
-    console.log(ob);
 
     props.addTask(ob);
     handleLink('/');
@@ -49,14 +45,14 @@ export const TaskForm = props => {
           <label>
             期日：
           </label>
-          <input type="datetime-local" name="date" />
+          <input type="date" name="date" />
         </div>
 
         <div>
           <label>
             開始日：
           </label>
-          <input type="datetime-local" name="date" />
+          <input type="date" name="date" />
         </div>
       </div>
 

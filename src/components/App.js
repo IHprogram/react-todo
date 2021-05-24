@@ -1,23 +1,16 @@
-// import './App.css';
 import { connect } from 'react-redux';
-import React, { Component, useState } from "react";
+import React from "react";
 import { addTask, deleteTask } from '../actions';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
 } from 'react-router-dom';
 
 import { Navi } from './navi.js';
 import { TaskForm } from './task_form.js';
 import { Tasks } from './tasks.js';
 import { TaskDetail } from './task_detail.js'
-
-
-// class App extends Component {
-//   render() {
 
 const App = (hoge) => {
   const props = hoge;
@@ -26,7 +19,7 @@ const App = (hoge) => {
       <div>
         <Navi />
         <Switch>
-          <Route path='/task_detail/:taskId' component={TaskDetail} />
+          <Route path='/task_detail/:taskId' exact component={TaskDetail} />
           <Route path="/task_form">
             <TaskForm addTask={props.addTask} />
           </Route>
@@ -38,7 +31,6 @@ const App = (hoge) => {
       </div>
     </Router>
   )
-  // }
 }
 
 const mapStateToProps = state => ({
