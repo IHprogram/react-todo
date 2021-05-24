@@ -8,7 +8,7 @@ export const TaskForm = props => {
   console.log(props);
   const history = useHistory();
   const handleLink = path => history.push(path);
-  const kansu = (e) => {
+  const add = (e) => {
     const ob = {};
     ob.title = e.target.previousElementSibling.children[0].children[1].value;
     ob.human = e.target.previousElementSibling.children[1].children[1].value;
@@ -60,7 +60,7 @@ export const TaskForm = props => {
         </div>
       </div>
 
-      <button onClick={kansu}>追加</button>
+      <button onClick={add}>追加</button>
     </div>
   )
 }
