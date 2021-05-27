@@ -1,3 +1,5 @@
+import firebase, { providerGoogle } from '../firebase';
+
 export const ADDTASK = 'addTask';
 export const DELETETASK = 'deleteTask';
 
@@ -22,3 +24,25 @@ export const deleteTask = (index) => {
     }
   }
 }
+
+export const loginWithGoogle = () =>
+  async () => {
+    {
+      await firebase.auth().signInWithRedirect(providerGoogle);
+      firebase.auth().getRedirectResult()
+    }
+  }
+
+export const logout = () =>
+  async () => {
+    {
+      await firebase.auth().signOut()
+    }
+  }
+  // console.log('logoutです')
+  // firebase.auth().signOut()
+  //   .then(result => {
+  //     console.log(result);
+  //   }).catch(error => {
+  //     console.log(error);
+  //   });

@@ -5,6 +5,7 @@ const initialState = []
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADDTASK:
+      console.log(action.payload);
       return [...state, action.payload]
     case DELETETASK:
       const newTodos = [...state]
